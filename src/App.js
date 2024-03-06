@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './styles.css';
+import imgg from "./img/imgg.png"
 
-const Formulario = () => {
+const App = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -13,6 +13,7 @@ const Formulario = () => {
 
   return (
     <div className="container">
+      <img src={imgg} alt="imgg" title="imagem"/>
       <h1>Email</h1>
       <input
         type="email"
@@ -36,4 +37,4 @@ const Formulario = () => {
   );
 };
 
-export default Formulario;
+export default App;
