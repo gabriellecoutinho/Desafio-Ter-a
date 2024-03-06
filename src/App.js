@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './styles.css';
 
-function App() {
+const Formulario = () => {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Email:', email);
+    console.log('Senha:', senha);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Email</h1>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <h1>Senha</h1>
+      <input
+        type="password"
+        id="senha"
+        name="senha"
+        value={senha}
+        onChange={(e) => setSenha(e.target.value)}
+      />
+      <button id="enviar" onClick={handleSubmit}>
+        Enviar
+      </button>
     </div>
   );
-}
+};
 
-export default App;
+export default Formulario;
